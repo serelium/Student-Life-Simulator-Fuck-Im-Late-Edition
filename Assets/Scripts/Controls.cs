@@ -5,6 +5,7 @@ using UnityEngine;
 public class Controls : MonoBehaviour {
 
     public int jumpForce;
+    public int speed;
     private Rigidbody2D rb2D;
     private bool grounded;
     private GameObject groundChecker;
@@ -23,7 +24,7 @@ public class Controls : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        Debug.DrawRay(groundChecker.transform.position, groundChecker.transform.position + Vector3.down, Color.red, 3f);
+        //Debug.DrawLine(groundChecker.transform.position, groundChecker.transform.position + Vector3.down, Color.red, 3f);
         RaycastHit2D hit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0.1f);
 
         grounded = hit2D.collider != null;
@@ -40,6 +41,6 @@ public class Controls : MonoBehaviour {
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
 
         animator.SetFloat("VelocityY", rb2D.velocity.y);
-        //rb2D.velocity = new Vector2(10, rb2D.velocity.y);
+        rb2D.velocity = new Vector2(speed, rb2D.velocity.y);
     }
 }
