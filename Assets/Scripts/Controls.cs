@@ -28,6 +28,7 @@ public class Controls : MonoBehaviour {
         RaycastHit2D hit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0.1f);
 
         grounded = hit2D.collider != null;
+        animator.SetBool("Grounded", grounded);
 
         if (grounded && Input.GetKeyDown(KeyCode.Space)) {
 

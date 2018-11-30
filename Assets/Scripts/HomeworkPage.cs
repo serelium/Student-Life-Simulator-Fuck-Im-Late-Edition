@@ -3,6 +3,9 @@ using System.Collections;
 
 public class HomeworkPage : MonoBehaviour {
 
+    public ParticleSystem pickupEffect;
+    public SoundEffect soundEffect;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,6 +19,12 @@ public class HomeworkPage : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.name == "Player")
-            Destroy(gameObject);
+        {
+
+            Instantiate(soundEffect, transform.position, transform.rotation);
+            Instantiate(pickupEffect, transform.position, transform.rotation);
+            collider.gameObject.GetComponent<Player>().AddHomeworkPage();
+            gameObject.SetActive(false);
+        }
     }
 }
