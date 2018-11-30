@@ -29,6 +29,6 @@ public class Player : MonoBehaviour {
 
     void OnDestroy()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 }
