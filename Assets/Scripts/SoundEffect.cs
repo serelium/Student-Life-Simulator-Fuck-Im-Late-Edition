@@ -18,6 +18,7 @@ public class SoundEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
         Destroy(gameObject, lifeTime);
 	}
 }

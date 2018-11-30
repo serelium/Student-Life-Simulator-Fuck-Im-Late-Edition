@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     private Health health;
+    public bool electrocuted;
     public int nbOfHomeworkPages;
 
 	// Use this for initialization
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour {
 
         health = GetComponent<Health>();
         nbOfHomeworkPages = 0;
-
+        electrocuted = false;
     }
 	
 	// Update is called once per frame

@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ConstructionSite : MonoBehaviour {
+public class Obstacle : MonoBehaviour {
 
     public int damage;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,6 +20,11 @@ public class ConstructionSite : MonoBehaviour {
         Health health = collider.gameObject.GetComponent<Health>();
 
         if (health != null)
+        {
+
             health.TakeDamage(damage);
+            GetComponent<Collider2D>().enabled = false;
+        }
+
     }
 }

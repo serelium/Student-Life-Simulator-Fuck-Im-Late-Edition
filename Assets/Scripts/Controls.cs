@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Controls : MonoBehaviour {
 
+    public SoundEffect jumpSoundEffect;
     public int jumpForce;
     public int speed;
     private Rigidbody2D rb2D;
@@ -24,15 +25,15 @@ public class Controls : MonoBehaviour {
     // Update is called once per frame
     void Update() {
 
-        //Debug.DrawLine(groundChecker.transform.position, groundChecker.transform.position + Vector3.down, Color.red, 3f);
-        RaycastHit2D hit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0.1f);
+        Debug.DrawLine(groundChecker.transform.position, groundChecker.transform.position + Vector3.down * 0.5f, Color.red, 3f);
+        RaycastHit2D hit2D = Physics2D.Raycast(groundChecker.transform.position, Vector2.down, 0.5f);
 
-        grounded = hit2D.collider != null;
+        grounded = hit2D.collider != null && !hit2D.collider.isTrigger;
         animator.SetBool("Grounded", grounded);
 
-        if (grounded && Input.GetKeyDown(KeyCode.Space)) {
-
-            //rb2D.AddForce(new Vector2(0, jumpForce));
+        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(jumpSoundEffect, transform.position, transform.rotation);
             rb2D.velocity = Vector2.up * jumpForce;
         }
 

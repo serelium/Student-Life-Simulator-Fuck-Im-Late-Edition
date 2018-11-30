@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: 3e177de638102d24f82c21a51d67c5b7
-timeCreated: 1543564111
+guid: 5b82d472858b6d04a969a8c4bc35e9bd
+timeCreated: 1543567629
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Student Electrocuted_0
-    21300002: Student Electrocuted_1
-    21300004: Student Electrocuted_2
-    21300006: Student Electrocuted_3
+    21300000: Old Lady_0
+    21300002: Old Lady_1
+    21300004: Old Lady_2
+    21300006: Old Lady_3
+    21300008: Old Lady_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -61,7 +62,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Student Electrocuted_0
+      name: Old Lady_0
       rect:
         serializedVersion: 2
         x: 0
@@ -74,7 +75,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Student Electrocuted_1
+      name: Old Lady_1
       rect:
         serializedVersion: 2
         x: 64
@@ -87,7 +88,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Student Electrocuted_2
+      name: Old Lady_2
       rect:
         serializedVersion: 2
         x: 128
@@ -100,10 +101,23 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Student Electrocuted_3
+      name: Old Lady_3
       rect:
         serializedVersion: 2
         x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Old Lady_4
+      rect:
+        serializedVersion: 2
+        x: 256
         y: 0
         width: 64
         height: 64
