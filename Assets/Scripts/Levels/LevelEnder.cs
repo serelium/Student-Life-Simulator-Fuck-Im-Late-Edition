@@ -8,6 +8,7 @@ public class LevelEnder : MonoBehaviour {
     public SpawnerManager[] spawnerManagers;
     public Collider2D levelEndTrigger;
     public CameraFollow cameraFollow;
+    public bool levelEnded;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class LevelEnder : MonoBehaviour {
 
     private void CheckIfLevelEnded()
     {
-        bool levelEnded = true;
+        levelEnded = true;
 
         foreach (SpawnerManager spawnerManager in spawnerManagers)
         {

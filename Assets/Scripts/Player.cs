@@ -7,13 +7,15 @@ public class Player : MonoBehaviour {
     private Health health;
     public bool electrocuted;
     public int nbOfHomeworkPages;
+    private int pagesAtStartOfLevel;
 
 	// Use this for initialization
 	void Start () {
 
         health = GetComponent<Health>();
         health.currentHealth = GameController.playerHealth;
-        nbOfHomeworkPages = 0;
+        pagesAtStartOfLevel = GameController.homeworkPagesOwned;
+        nbOfHomeworkPages = GameController.homeworkPagesOwned;
         electrocuted = false;
     }
 	
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour {
 
             GameController.numberOfTries++;
             GameController.playerHealth = 4;
-            GameController.homeworkPagesOwned = 0;
+            GameController.homeworkPagesOwned = pagesAtStartOfLevel;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

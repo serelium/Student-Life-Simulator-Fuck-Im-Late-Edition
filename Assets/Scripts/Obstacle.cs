@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour {
 
+    public SoundEffect soundEffect;
     public int damage;
     public float lifeTime;
 
@@ -23,7 +24,7 @@ public class Obstacle : MonoBehaviour {
 
         if (health != null)
         {
-
+            Instantiate(soundEffect, transform.position, transform.rotation);
             health.TakeDamage(damage);
             GetComponent<Collider2D>().enabled = false;
         }

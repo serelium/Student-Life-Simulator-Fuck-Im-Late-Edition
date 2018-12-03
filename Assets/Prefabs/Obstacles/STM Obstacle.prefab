@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30e9faf2a44ec043a9ffc91d576ea40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 114756935091278436, guid: 56a2be699f8eb654c954064b3c4c9546,
+    type: 2}
   damage: 1
   lifeTime: 10
 --- !u!212 &212000013099970024

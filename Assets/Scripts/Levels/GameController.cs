@@ -7,11 +7,13 @@ public static class GameController {
     public static int playerHealth;
     public static int homeworkPagesOwned;
     public static int numberOfTries;
+    public static int pagesInLevel;
 
     public static void ResetStats()
     {
         playerHealth = 4;
         homeworkPagesOwned = 0;
         numberOfTries = 0;
+        pagesInLevel = 0;
     }
 }
