@@ -14,7 +14,9 @@ public class ElectricRails : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        electrocutionDuration = soundEffect.audioClip.length;
+        if(soundEffect != null)
+            electrocutionDuration = soundEffect.audioClip.length;
+
         electrocuted = false;
     }
 
@@ -40,7 +42,9 @@ public class ElectricRails : MonoBehaviour {
     {
         if (collider.gameObject.name == "Player")
         {
-            Instantiate(soundEffect, transform.position, transform.rotation);
+            if(soundEffect != null)
+                Instantiate(soundEffect, transform.position, transform.rotation);
+
             collider.gameObject.GetComponent<Animator>().SetBool("Electrocuted", true);
             collider.gameObject.GetComponent<Controls>().speed = 0;
             collider.gameObject.GetComponent<Player>().electrocuted = true;

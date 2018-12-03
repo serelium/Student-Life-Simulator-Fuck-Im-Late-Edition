@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 	void Start () {
 
         health = GetComponent<Health>();
+        health.currentHealth = GameController.playerHealth;
         nbOfHomeworkPages = 0;
         electrocuted = false;
     }
@@ -20,16 +21,23 @@ public class Player : MonoBehaviour {
 	void Update () {
 
         Animator animator = Camera.main.gameObject.GetComponentInChildren<Animator>();
-        animator.SetInteger("Health", health.currentHealth);
-	}
+
+        if(animator != null)
+            animator.SetInteger("Health", health.currentHealth);
+
+        if(health.currentHealth <= 0)
+        {
+
+            GameController.numberOfTries++;
+            GameController.playerHealth = 4;
+            GameController.homeworkPagesOwned = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 
     public void AddHomeworkPage()
     {
         nbOfHomeworkPages++;
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+        GameController.homeworkPagesOwned++;
     }
 }

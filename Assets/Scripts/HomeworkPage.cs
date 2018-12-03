@@ -24,7 +24,7 @@ public class HomeworkPage : MonoBehaviour {
             Instantiate(soundEffect, transform.position, transform.rotation);
             Instantiate(pickupEffect, transform.position, transform.rotation);
             collider.gameObject.GetComponent<Player>().AddHomeworkPage();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }

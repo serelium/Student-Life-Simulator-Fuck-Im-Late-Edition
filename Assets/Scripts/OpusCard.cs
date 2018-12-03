@@ -4,7 +4,7 @@ using System.Collections;
 public class OpusCard : MonoBehaviour {
 
     public int speed;
-    public Rigidbody2D rb; 
+    private Rigidbody2D rb; 
 
 	// Use this for initialization
 	void Start () {

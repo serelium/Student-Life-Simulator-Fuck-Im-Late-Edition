@@ -4,10 +4,12 @@ using System.Collections;
 public class Obstacle : MonoBehaviour {
 
     public int damage;
+    public float lifeTime;
 
 	// Use this for initialization
 	void Start () {
-	
+
+        Destroy(gameObject, lifeTime);
 	}
 	
 	// Update is called once per frame
