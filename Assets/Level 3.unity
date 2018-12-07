@@ -333,9 +333,24 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114615609757883550, guid: 83cee3617604ca140b0c6c0102bd2598,
+        type: 2}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 2140905752}
+    - target: {fileID: 114615609757883550, guid: 83cee3617604ca140b0c6c0102bd2598,
+        type: 2}
+      propertyPath: inGameOptionsMenu
+      value: 
+      objectReference: {fileID: 723707260}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83cee3617604ca140b0c6c0102bd2598, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &723707260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1393113831223054, guid: 83cee3617604ca140b0c6c0102bd2598,
+    type: 2}
+  m_PrefabInternal: {fileID: 723707259}
 --- !u!1001 &840311957
 Prefab:
   m_ObjectHideFlags: 0
@@ -379,6 +394,11 @@ Prefab:
         type: 2}
       propertyPath: nbOfHomeworkPages
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010827008302, guid: f1c59ff69de8a0246a4f61bc713bdea1,
+        type: 2}
+      propertyPath: currentHealth
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1c59ff69de8a0246a4f61bc713bdea1, type: 2}

@@ -45,7 +45,7 @@ public class Controls : MonoBehaviour {
 
         //if (grounded && Input.GetKeyDown(KeyCode.Space))
 
-        bool buttonDown = Application.platform != RuntimePlatform.Android ? Input.GetKeyDown(KeyCode.Space) : CrossPlatformInputManager.GetButtonDown("Jump");
+        bool buttonDown = Application.platform != (RuntimePlatform.Android | RuntimePlatform.IPhonePlayer) ? Input.GetKeyDown(KeyCode.Space) : CrossPlatformInputManager.GetButtonDown("Jump");
 
         if (grounded && buttonDown)
         {
@@ -53,7 +53,7 @@ public class Controls : MonoBehaviour {
             rb2D.velocity = Vector2.up * jumpForce;
         }
 
-        bool button = Application.platform != RuntimePlatform.Android ? !Input.GetKey(KeyCode.Space) : !CrossPlatformInputManager.GetButton("Jump");
+        bool button = Application.platform != (RuntimePlatform.Android | RuntimePlatform.IPhonePlayer) ? !Input.GetKey(KeyCode.Space) : !CrossPlatformInputManager.GetButton("Jump");
 
         if (rb2D.velocity.y < 0)
             rb2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
